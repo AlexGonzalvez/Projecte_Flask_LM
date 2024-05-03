@@ -48,7 +48,7 @@ Per activar l'entorn virtual i començar a treballar, només hem de posar la seg
 
 El primer que hem de fer es veure què tenim al nostre arxiu zip que hem descarregat i importat al nostre projecte, per a fer-ho hem d'activar el nostre entorn Flask. Només hem d'executar el següent a la nostra terminal: **flask run --debug**. Ara ja podem consultar la pàgina sobre la que hem de treballar. En aquest cas consultem la pàgina **index.html** on afegirem dues seccions simples més. 
 
-D'aquesta manera, el codi sense modificar auq hauriem de trobar al Visual Studio o entorn similar es el següent: 
+D'aquesta manera, el codi sense modificar (el de la nostra aplicació) que hauriem de trobar al Visual Studio o entorn similar es el següent: 
 
 
 ```
@@ -148,10 +148,38 @@ def get_rss_lavanguardia(seccio):
     return rss
 
 ```
+
+
+
+Aquest és només el codi de la nostra connexió i no l'hem de modificar encara, sinó que el que hem de fer és modifica l'index.html, codi que és el següent: 
+
+```
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Diaris!</title>
+</head>
+<body>
+    <p>Mira les noticies de La Vanguardia:</p>
+    <ul>
+        <li><a href="/lavanguardia/deportes">Deportes</a></li>
+        <li><a href="/lavanguardia/politica">Política</a></li>
+        <li><a href="/lavanguardia/vida">Vida</a></li>
+    </ul>
+    <img src="/static/img/diaris.jpg" alt="Diaris" />
+</body>
+</html>
+
+```
+
 De tot això només ens hem de fixar en la ruta d'index.html. Si accedim després d'obrir l'entorn Flask, hauriem de veure una pàgina similar a aquesta: 
 
 
 ![Imatge sobre com hauria de ser la nostra pàgina inicial](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/diaris_init.png)
+
 
 
 
