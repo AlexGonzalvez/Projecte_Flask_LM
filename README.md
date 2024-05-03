@@ -42,6 +42,8 @@ Successfully installed feedparser-6.0.11 sgmllib3k-1.0.0
 
 ```
 
+Per activar l'entorn virtual i començar a treballar, només hem de posar la següent instrucció: 
 
+**source .venv/bin/activate** (s'ha de substituir la paraula .venv (si és necessari) pel nom que l'haguem posat al nostre entorn virtual. 
 
 
