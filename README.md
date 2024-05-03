@@ -149,7 +149,7 @@ def get_rss_lavanguardia(seccio):
 
 ```
 De tot això només ens hem de fixar en la ruta d'index.html. Si accedim després d'obrir l'entorn Flask, hauriem de veure una pàgina similar a aquesta: 
-![Imatge sobre com hauria de ser la nostra pàgina inicial](https://raw.githubusercontent.com/AlexGonzalvez/Projecte_Flask_LM/master/templates/diaris_init.png)
+![Imatge sobre com hauria de ser la nostra pàgina inicial](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/diaris_init.png)
 
 
 
