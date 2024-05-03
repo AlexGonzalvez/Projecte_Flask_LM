@@ -76,14 +76,15 @@ def insert():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html")   #Esta es la ruta principal (/) en la que usaremos como "template" index.html. Es el inicio de todo
 
-@app.route('/lavanguardia/<seccio>')
+@app.route('/lavanguardia/<seccio>')  #Con cada ruta que generamos creamos una función justo debajo de la ruta, a la que le pasamos como parámetro una sección, que le pasa el usuario desde el ordenador
 def lavanguardia(seccio):
-    rss = get_rss_lavanguardia(seccio)
-    return render_template("lavanguardia.html", rss = rss)
+    rss = get_rss_lavanguardia(seccio) #Desde aquí creamos el rss, que llama a la función de abajo y simplemente guarda la información del rss, que se obtiene de manera remota (internet) o local
+    print(rss.entries[0]) #Esto se usa para buscar datos exactos, los que no coincidan con las etiquetas.
+    return render_template("lavanguardia.html", rss = rss) #Esta es la plantilla que se devuelve, con el rss final que pasaremos a nuestro html
 
-def get_rss_lavanguardia(seccio):
+def get_rss_lavanguardia(seccio): #Esto define como se obtiene el rss local o de web, que forma el rss final.
     # MODE REMOT: versió on descarrega l'XML de la web
     # xml = f"https://www.lavanguardia.com/rss/{seccio}.xml"
     
