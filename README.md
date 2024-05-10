@@ -181,6 +181,53 @@ De tot això només ens hem de fixar en la ruta d'index.html. Si accedim despré
 ![Imatge sobre com hauria de ser la nostra pàgina inicial](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/diaris_init.png)
 
 
+Ara és el moment d'afegir dues seccions més a la nostra pàgina, que en aquest cas seràn "política" i "vida". Per a fer-ho creem dos arxius XML més amb el nom d'aquestes seccions a l'apartat "rss/vanguardia". Una vegada creats, només hem de posar el codi XML que veiem a la pàgina de la vanguardia. En concret, l'XML que s'ha insertat en el projecte és el seguent: 
+
+-Pàgina de la secció "política": [https://www.lavanguardia.com/rss/politica.xml](https://www.lavanguardia.com/rss/politica.xml)
+
+-Pàgina de la secció "vida": [https://www.lavanguardia.com/rss/vida.xml](https://www.lavanguardia.com/rss/vida.xml)
+
+Una vegada hem realitzat això hem de modificar la plantilla principal de "lavanguardia.html" per mostrar tota la informació dels XML (logo del channel i la url del channel, i per cada item: descripció, dates de creació i de modificació, autor i categoria). Per a fer això hem d'utilitzar feedparser (si es necessita qualsevol informació rellevant, sempre es pot consultar a la seva [documentació oficial](https://www.google.com/url?q=https://feedparser.readthedocs.io/en/latest/common-rss-elements.html&sa=D&source=docs&ust=1715356008391302&usg=AOvVaw1GQQaEX8dtIwGlbr1vzCFK).
+
+Amb feedparser podem obtenir les dades que necessitem de manera sencilla. Primer creem, com si fos un HTML, l'estructura on anirà l'element que volem (és a dir, etiquetes de tipus img, p, etc) i, al moment de posar el valor, l'estil {{ rss.feed.(dada que volem) }} (per exemple, per a obtenir el valor de la imatge del XML, farem un {{ rss.feed.image.url }} (per obtenir la URL d'on surt la imatge) i un {{ rss.feed.image.title }} (per mostrar el títol). Si el que necessitem es mostrar totes les imatges que hi ha a la pàgina, necessitarem un bucle FOR, per recorrer cada item (element) que tenim a la nostra llista d'elements d'on treurem totes les dades necessàries (url, link, descripció, etc.). 
+
+Si ho hem fet bé el nostre codi hauria de semblar-se al següent:
+
+```
+
+<!DOCTYPE html>  <!--Feedparser utiliza el rss que hemos creado en app.py y, poniendole una serie de atributos que corresponden a las etiquetas de nuestro xml, podemos obtener los datos de manera sencilla-->
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Vanguardia - {{rss.feed.title}}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+    <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title }}">
+    <p><a href="{{ rss.feed.image.link }}">{{ rss.feed.image.link }}</a></p>
+    {% for item in rss.entries %}  <!--rss.entries es una lista de páginas que tenemos en la sección de notícias. Aquí se establece que se ha de hacer un recorrido por todas las notícias, y por cada una su información independiente.-->
+        <p>
+            <a href="{{item.link}}">{{item.title}}</a>
+            {% for media in item.media_content %}
+                <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
+            {% endfor %}
+        </p>
+    
+
+    <p>Descripción de la notícia - {{item.description}}</p>  <!--Finalmente, mostramos por pantalla la descripción de la notícia, fecha de publicación, modificación, autor, categoría de las notícia-->
+    <p>Fecha de publicación - {{item.published}}</p>
+    <p>Fecha de modificación - {{item.updated}}</p>
+    <p>Autor - {{item.author}}</p>
+    <p>Categoría de la notícia- {{item.category}}</p>
+    {% endfor %}
+</body>
+</html>
+
+```
+I la nostra pàgina de resultats ens hauria de permetre veure les imatges, amb descripció, títol i dades necessàries. Hauria de ser semblant a la següent:
+
 
 
 
