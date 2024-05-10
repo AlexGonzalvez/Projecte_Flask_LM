@@ -48,7 +48,11 @@ Per activar l'entorn virtual i començar a treballar, només hem de posar la seg
 
 El primer que hem de fer es veure què tenim al nostre arxiu zip que hem descarregat i importat al nostre projecte, per a fer-ho hem d'activar el nostre entorn Flask. Només hem d'executar el següent a la nostra terminal: **flask run --debug**. Ara ja podem consultar la pàgina sobre la que hem de treballar. En aquest cas consultem la pàgina **index.html** on afegirem dues seccions simples més. 
 
-D'aquesta manera, el codi sense modificar (el de la nostra aplicació) que hauriem de trobar al Visual Studio o entorn similar es el següent: 
+D'aquesta manera, el codi sense modificar (el de la nostra aplicació) que hauriem de trobar al Visual Studio o entorn similar es el següent (s'han afegit comentaris explicatius per apuntar una mica el que fa cada línea (sobretot les finals, que són les que realment aplicarem en el nostre projecte).
+
+Podem dividir-ho en dues parts: la primera son proves, i la segona ja aplica el projecte:
+
+Primera part:
 
 
 ```
@@ -110,6 +114,26 @@ def hola2():
                            )
 
 #
+# Petit exemple amb flask [SEGUIMENT]
+#
+@app.route("/hola1")
+def hola1():
+    return render_template("exemples/hola/salutacio_form.html")
+
+@app.route("/hola2")
+def hola2():
+    valor_salutacio = request.args.get('salutacio', default = "WTF!", type = str)
+    valor_quantes = request.args.get('quantes', default = 1, type = int)
+    valor_color_de_fons = request.args.get('color-de-fons', default = "white", type = str)
+    valor_gatete = request.args.get('gatete', default = False, type = bool)
+    return render_template("exemples/hola/salutacio_resultat.html", 
+                           salutacio = valor_salutacio, 
+                           quantes = valor_quantes,
+                           color_de_fons = valor_color_de_fons,
+                           gatete = valor_gatete
+                           )
+
+#
 # Exemple de formulari amb post
 #
 @app.route("/insert", methods=['GET', 'POST'])
@@ -128,16 +152,23 @@ def insert():
         flash(f"El producte {producte} amb quantitat {quantitat} s'ha inserit correctament")
         return redirect(url_for('insert'))
 
+```
+
+Segona part amb comentaris explicatius (la part on ens haurem de centrar): 
+
+```
+
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html")   #Esta es la ruta principal (/) en la que usaremos como "template" index.html. Es el inicio de todo
 
-@app.route('/lavanguardia/<seccio>')
+@app.route('/lavanguardia/<seccio>')  #Con cada ruta que generamos creamos una función justo debajo de la ruta, a la que le pasamos como parámetro una sección, que le pasa el usuario desde el ordenador
 def lavanguardia(seccio):
-    rss = get_rss_lavanguardia(seccio)
-    return render_template("lavanguardia.html", rss = rss)
+    rss = get_rss_lavanguardia(seccio) #Desde aquí creamos el rss, que llama a la función de abajo y simplemente guarda la información del rss, que se obtiene de manera remota (internet) o local
+    print(rss.entries[0]) #Esto se usa para buscar datos exactos, los que no coincidan con las etiquetas.
+    return render_template("lavanguardia.html", rss = rss) #Esta es la plantilla que se devuelve, con el rss final que pasaremos a nuestro html
 
-def get_rss_lavanguardia(seccio):
+def get_rss_lavanguardia(seccio): #Esto define como se obtiene el rss local o de web, que forma el rss final.
     # MODE REMOT: versió on descarrega l'XML de la web
     # xml = f"https://www.lavanguardia.com/rss/{seccio}.xml"
     
@@ -146,6 +177,8 @@ def get_rss_lavanguardia(seccio):
     
     rss = feedparser.parse(xml)
     return rss
+
+
 
 ```
 
