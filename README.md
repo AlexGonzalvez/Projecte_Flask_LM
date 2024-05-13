@@ -301,6 +301,8 @@ Per crear una pàgina principal amb Bootstrap, la manera més senzilla és fer-h
 ```
 Bootstrap inicia amb les etiquetes HTML principals. A l'etiqueta "head" hem de posar els anomenats "Meta tags" que ens facilitaràn la tasca de visualització, mostrant a cada usuari de manera responsive el contingut de la pàgina segons el dispositiu que estigui utilitzant. És important posar al nostre projecte el CSS del framework de bootstrap en un link "href" tal i com es mostra per importar el seu full d'estil. Finalment, ens hem d'enrecordar de posar l'etiqueta "script" amb el framework de Bootstrap per que puguem utilitzar totes les seves funcionalitats. 
 
+Resultat per pantalla:
+
 2. CONTAINERS
 
 Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la informació que volem posar a la nostra web. Gràcies a aquesta funció podem posar el text que necessitem en diverses parts i editar-les sense que hi hagi conflictes. Per si fos poc, també ens ajuda a que cadascuna de les parts tingui el seu propi estil, ja que podem ajustar-lo al color i mida que vulguem, (el que pot ser útil per establir la mida del contenidor segons la mida de la pantalla de l'usuari de manera responsive). D'aquesta manera els contenidors són essencials per poder tenir el nostre text creatiu i original. A continuació es mostra un codi on es creen aquests contenidors de diferents mides i que contenen el seu propi text (que descriu si és un contenidor petit, mitjà, gran o molt gran). 
@@ -371,10 +373,11 @@ Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la i
 </html>
 
 ```
+Resultat per pantalla:
 
 3. GRID
 
-La funcionalitat anomenada "grid" ens permet afegir taules, formades per files i columnes. Aquestes taules van dins de contenidors, el que ens permet modificar les seves propietats (com el seu text, color de vora i distribució de les cel·les en general). Dins de cada contenidor hi ha una etiqueta "div" que conté cada camp, així que és possible modificar cadascún dels camps per separat per personalitzar-lo com vulguem. A continuació hi ha un exemple de codi de com crear un esquema de taules senzill: 
+La funcionalitat anomenada "grid" ens permet afegir files i columnes. Aquestes files i columnes van dins de contenidors, el que ens permet modificar les seves propietats (com el seu text, color de vora i distribució de les cel·les en general). Dins de cada contenidor hi ha una etiqueta "div" que conté cada camp, així que és possible modificar cadascún dels camps per separat per personalitzar-lo com vulguem. A continuació hi ha un exemple de codi de com crear un esquema de quadrícules senzill: 
 
 ```
 
@@ -460,7 +463,7 @@ La funcionalitat anomenada "grid" ens permet afegir taules, formades per files i
 </html>
 
 ```
-
+Resultat per pantalla:
 
 4. BARRES DE NAVEGACIÓ:
 
@@ -585,6 +588,81 @@ A continuació es mostra un codi d'exemple que mostra aquesta funcionalitat:
 </html>
 
 ```
+Resultat per pantalla:
+
+
+5. TAULES
+
+Per últim en aquesta part de documentació essencial de Bootstrap, veurem la creació de taules. És una mica semblant al grid, i per a diferenciar-ho podem pensar en això com una funcionalitat no tan flexible com un grid, que ens servirà per donar una disposició uniforme a les nostres dades. Podem imaginar que utilitzem aquest mètode per mostrar les dades d'una base de dades, mentre que utilitzariem grid per dividir les dades en el tamany i disposició que vulguem per mostrar-les d'una manera més creativa. 
+
+La manera de crear-les també és similar al grid, ja que cada text va dins d'un div de columna on especifiquem, gràcies a un atribut "class" les seves característiques úniques. Aquest div de columna hi és dins d'un div de fila (row) i aquest es troba a dins d'un container. 
+
+Un exemple de codi que mostra com crear una taula senzilla podría ser el següent: 
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <!-- Meta tags necessaris -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS del framework bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-padding-top: 70px;
+    }
+  </style>
+  <title>Exemple</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+ <!-- JavaScript del framework bootstrap -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+ crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Resultat per pantalla: 
+
+
+
+Ara que ja hem vist les funcionalitats principals de Bootstrap, podem continuar amb el nostre projecte.
 
 
 
