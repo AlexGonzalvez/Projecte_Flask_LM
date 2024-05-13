@@ -370,11 +370,96 @@ Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la i
 
 </html>
 
+```
 
+3. GRID
 
+La funcionalitat anomenada "grid" ens permet afegir taules, formades per files i columnes. Aquestes taules van dins de contenidors, el que ens permet modificar les seves propietats (com el seu text, color de vora i distribució de les cel·les en general). Dins de cada contenidor hi ha una etiqueta "div" que conté cada camp, així que és possible modificar cadascún dels camps per separat per personalitzar-lo com vulguem. A continuació hi ha un exemple de codi de com crear un esquema de taules senzill: 
 
 ```
 
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <!-- Meta tags necessaris -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Grid</title>
+</head>
+
+<body>
+
+    <div class="container-fluid text-center p-3 bg-primary text-bg-primary">
+        <h1>Grid</h1>
+    </div>
+
+    <div class="container text-center mt-5 border border-danger">
+        <div class="row"> <!--Cada línea tiene 3 columnas-->
+            <div class="col border">
+                Andorra
+            </div>
+            <div class="col border"> <!--Se reparte por igual el tamaño en el máximo de la pantalla-->
+                Bèlgica
+            </div>
+            <div class="col border">
+                Canadà
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                Dinamarca
+            </div>
+            <div class="col-7 border"> <!--Ocupa 7 columnas en este, a diferencia de las otras dos columnas-->
+                Estats Units
+            </div>
+            <div class="col border">
+                França
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                Georgia
+            </div>
+            <div class="col-5 border">
+                Holanda
+            </div>
+            <div class="col-5 border">
+                Islàndia
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5 border border-warning"> <!--Las columnas que no quepan se irán hacia abajo, ya que al superar el tamaño de la pantalla bajarán-->
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3 border"> 
+                Alvocat
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 border">
+                Banana
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 border">
+                Cirera
+            </div>
+            <div class="col-md-6 col-lg-12 col-xl-3 border">
+                Dàtil
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
 
 
 
