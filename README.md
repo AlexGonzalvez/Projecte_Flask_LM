@@ -301,8 +301,6 @@ Per crear una pàgina principal amb Bootstrap, la manera més senzilla és fer-h
 ```
 Bootstrap inicia amb les etiquetes HTML principals. A l'etiqueta "head" hem de posar els anomenats "Meta tags" que ens facilitaràn la tasca de visualització, mostrant a cada usuari de manera responsive el contingut de la pàgina segons el dispositiu que estigui utilitzant. És important posar al nostre projecte el CSS del framework de bootstrap en un link "href" tal i com es mostra per importar el seu full d'estil. Finalment, ens hem d'enrecordar de posar l'etiqueta "script" amb el framework de Bootstrap per que puguem utilitzar totes les seves funcionalitats. 
 
-Resultat per pantalla:
-
 2. CONTAINERS
 
 Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la informació que volem posar a la nostra web. Gràcies a aquesta funció podem posar el text que necessitem en diverses parts i editar-les sense que hi hagi conflictes. Per si fos poc, també ens ajuda a que cadascuna de les parts tingui el seu propi estil, ja que podem ajustar-lo al color i mida que vulguem, (el que pot ser útil per establir la mida del contenidor segons la mida de la pantalla de l'usuari de manera responsive). D'aquesta manera els contenidors són essencials per poder tenir el nostre text creatiu i original. A continuació es mostra un codi on es creen aquests contenidors de diferents mides i que contenen el seu propi text (que descriu si és un contenidor petit, mitjà, gran o molt gran). 
@@ -373,7 +371,8 @@ Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la i
 </html>
 
 ```
-Resultat per pantalla:
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/Containers.png)
+
 
 3. GRID
 
@@ -463,7 +462,8 @@ La funcionalitat anomenada "grid" ens permet afegir files i columnes. Aquestes f
 </html>
 
 ```
-Resultat per pantalla:
+Resultat per pantalla: Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/grid.png)
+
 
 4. BARRES DE NAVEGACIÓ:
 
@@ -588,7 +588,8 @@ A continuació es mostra un codi d'exemple que mostra aquesta funcionalitat:
 </html>
 
 ```
-Resultat per pantalla:
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/navegacio.png)
+
 
 
 5. TAULES
@@ -658,7 +659,7 @@ Un exemple de codi que mostra com crear una taula senzilla podría ser el següe
 </html>
 
 ```
-Resultat per pantalla: 
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/tablas.png)
 
 
 
