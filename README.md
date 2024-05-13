@@ -261,6 +261,14 @@ Si ho hem fet bé el nostre codi hauria de semblar-se al següent:
 ```
 I la nostra pàgina de resultats ens hauria de permetre veure les imatges, amb descripció, títol i dades necessàries. Hauria de ser semblant a la següent:
 
+![Imatge sobre com hauria de ser la nostra pàgina inicial](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/apunts_2.png)
+
+**BOOTSTRAP**
+
+Ara per continuar amb el nostre projecte, farem servir Boostrap, un framework que servei per donar un estil responsive i únic a les nostres pàgines web. A continuació, s'aniràn documentant unes pràctiques que ens ajudaràn a entendre millor com funciona i que ens poden servir per continuar amb el nostre projecte, ja que mostren les seves funcionalitats principals. 
+
+
+
 
 
 
