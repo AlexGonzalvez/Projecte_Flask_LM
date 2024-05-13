@@ -462,6 +462,130 @@ La funcionalitat anomenada "grid" ens permet afegir taules, formades per files i
 ```
 
 
+4. BARRES DE NAVEGACIÓ:
+
+Per crear barres de navegació amb Bootstrap hem de posar els següents atributs a la nostra etiqueta "<body>"
+
+```
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+```
+D'aquesta manera estem començant a configurar la nostra barra de navegació, però encara hem d'indicar com volem que s'expandeixi o es colapsi. Per això, hem de posar la següent etiqueta:
+
+```
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+```
+Per centrar el text de la nostra secció de navegació, l'hem de posar a dins d'un contenidor, i a partir d'allà podem posar els botons i items com vulguem. Per fer-ho, no ens podem oblidar de posar etiquetes nav-item on a dins podem posar etiquetes nav que s'ajustin al que necessitem (com per exemple, nav-link, que ens posaria un link href a la direcció web que vulguem).
+
+A continuació es mostra un codi d'exemple que mostra aquesta funcionalitat: 
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <!-- Meta tags necessaris -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS del framework bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-padding-top: 70px;
+    }
+  </style>
+  <title>Exemple</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!--ES preferible poner un nav para empezar la navegación, pero se podría poner un div-->
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+    <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+      <a class="navbar-brand" href="#">Components Arduino</a> <!--Navbar-brand es para que resalte -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav"> <!--Con ul podemos poner los ítems de la barra de navegación.-->
+          <li class="nav-item">
+            <a class="nav-link" href="#item-1">Item 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#item-2">Item 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#item-3">Item 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-5 bg-warning text-bg-warning">
+    <h1>Hola?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum atque laborum pariatur rem tempore dolorum
+      veritatis quibusdam voluptas deserunt, nulla ratione inventore voluptate est earum facere! Tenetur
+      perspiciatis rem eligendi.</p>
+  </div>
+  
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-1">Item 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-2">Item 2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-3">Item 3</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <!-- JavaScript del framework bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+
 
 
 
