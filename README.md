@@ -267,6 +267,41 @@ I la nostra pàgina de resultats ens hauria de permetre veure les imatges, amb d
 
 Ara per continuar amb el nostre projecte, farem servir Boostrap, un framework que servei per donar un estil responsive i únic a les nostres pàgines web. A continuació, s'aniràn documentant unes pràctiques que ens ajudaràn a entendre millor com funciona i que ens poden servir per continuar amb el nostre projecte, ja que mostren les seves funcionalitats principals. 
 
+1. PÀGINA PRINCIPAL:
+
+Per crear una pàgina principal amb Bootstrap, la manera més senzilla és fer-ho amb un codi semblant al següent:
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head> 
+    <!-- Meta tags necessaris -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Estructura inicial</title>
+</head>
+
+<body>
+
+    <p>Pàgina amb bootstrap, tot i que no vegis res especial</p>
+
+    <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Bootstrap inicia amb les etiquetes HTML principals. A l'etiqueta "head" hem de posar els anomenats "Meta tags" que ens facilitaràn la tasca de visualització, mostrant a cada usuari de manera responsive el contingut de la pàgina segons el dispositiu que estigui utilitzant. És important posar al nostre projecte el CSS del framework de bootstrap en un link "href" tal i com es mostra per importar el seu full d'estil. Finalment, ens hem d'enrecordar de posar l'etiqueta "script" amb el framework de Bootstrap per que puguem utilitzar totes les seves funcionalitats. 
+
+
 
 
 
