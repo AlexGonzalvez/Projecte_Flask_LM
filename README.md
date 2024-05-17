@@ -261,6 +261,411 @@ Si ho hem fet bé el nostre codi hauria de semblar-se al següent:
 ```
 I la nostra pàgina de resultats ens hauria de permetre veure les imatges, amb descripció, títol i dades necessàries. Hauria de ser semblant a la següent:
 
+![Imatge sobre com hauria de ser la nostra pàgina inicial](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/apunts_2.png)
+
+**BOOTSTRAP**
+
+Ara per continuar amb el nostre projecte, farem servir Boostrap, un framework que servei per donar un estil responsive i únic a les nostres pàgines web. A continuació, s'aniràn documentant unes pràctiques que ens ajudaràn a entendre millor com funciona i que ens poden servir per continuar amb el nostre projecte, ja que mostren les seves funcionalitats principals. 
+
+1. PÀGINA PRINCIPAL:
+
+Per crear una pàgina principal amb Bootstrap, la manera més senzilla és fer-ho amb un codi semblant al següent:
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head> 
+    <!-- Meta tags necessaris -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Estructura inicial</title>
+</head>
+
+<body>
+
+    <p>Pàgina amb bootstrap, tot i que no vegis res especial</p>
+
+    <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Bootstrap inicia amb les etiquetes HTML principals. A l'etiqueta "head" hem de posar els anomenats "Meta tags" que ens facilitaràn la tasca de visualització, mostrant a cada usuari de manera responsive el contingut de la pàgina segons el dispositiu que estigui utilitzant. És important posar al nostre projecte el CSS del framework de bootstrap en un link "href" tal i com es mostra per importar el seu full d'estil. Finalment, ens hem d'enrecordar de posar l'etiqueta "script" amb el framework de Bootstrap per que puguem utilitzar totes les seves funcionalitats. 
+
+2. CONTAINERS
+
+Els containers a Bootstrap ens facilitaràn molt la feina d'organitzar tota la informació que volem posar a la nostra web. Gràcies a aquesta funció podem posar el text que necessitem en diverses parts i editar-les sense que hi hagi conflictes. Per si fos poc, també ens ajuda a que cadascuna de les parts tingui el seu propi estil, ja que podem ajustar-lo al color i mida que vulguem, (el que pot ser útil per establir la mida del contenidor segons la mida de la pantalla de l'usuari de manera responsive). D'aquesta manera els contenidors són essencials per poder tenir el nostre text creatiu i original. A continuació es mostra un codi on es creen aquests contenidors de diferents mides i que contenen el seu propi text (que descriu si és un contenidor petit, mitjà, gran o molt gran). 
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <!-- Meta tags necessaris -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Containers</title>
+</head>
+
+<body>
+
+    <div class="container-fluid text-white bg-primary p-5 text-center"> <!--Ocupa todo el espacio-->
+        <h1>Hola!</h1>
+        <p class="lead">Això és un <mark>container </mark>fluid</p>
+    </div>
+
+    <div class="container-sm mt-5 p-4 border border-danger border-5"> <!--Ocupa todo el espacio (mt=margin top, s=start (right), b=bottom, e=end (right)) Valores de separación del 0 al 5-->
+        <h1>Hola!</h1>
+        <p>Això és un container petit</p>
+    </div>
+
+    <div class="container-md"> <!--Ocupa todo el espacio-->
+        <h1>Hola!</h1>
+        <p>Això és un container mitjà</p>
+    </div>
+
+    <div class="container-lg"> <!--Ocupa todo el espacio-->
+        <h1>Hola!</h1>
+        <p>Això és un container gran</p>
+    </div>
+
+    <div class="container-xl"> <!--Ocupa todo el espacio-->
+        <h1>Hola!</h1>
+        <p>Això és un container molt gran</p>
+    </div>
+
+    <div class="container-xxl"> <!--Ocupa todo el espacio-->
+        <h1>Hola!</h1>
+        <p>Això és un container molt molt gran</p>
+    </div>
+
+
+
+    <div class="container"> <!--Se ajusta a cada pantalla, y deja márgenes-->
+        <h1>Hola de nou!</h1>
+        <p>I aquest és un container normal</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae impedit rerum consequuntur, non dicta
+            perferendis harum laborum quae fugiat. Sequi explicabo labore ad blanditiis, error consequatur assumenda a
+            delectus porro.</p>
+    </div>
+
+    <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/Containers.png)
+
+
+3. GRID
+
+La funcionalitat anomenada "grid" ens permet afegir files i columnes. Aquestes files i columnes van dins de contenidors, el que ens permet modificar les seves propietats (com el seu text, color de vora i distribució de les cel·les en general). Dins de cada contenidor hi ha una etiqueta "div" que conté cada camp, així que és possible modificar cadascún dels camps per separat per personalitzar-lo com vulguem. A continuació hi ha un exemple de codi de com crear un esquema de quadrícules senzill: 
+
+```
+
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <!-- Meta tags necessaris -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Grid</title>
+</head>
+
+<body>
+
+    <div class="container-fluid text-center p-3 bg-primary text-bg-primary">
+        <h1>Grid</h1>
+    </div>
+
+    <div class="container text-center mt-5 border border-danger">
+        <div class="row"> <!--Cada línea tiene 3 columnas-->
+            <div class="col border">
+                Andorra
+            </div>
+            <div class="col border"> <!--Se reparte por igual el tamaño en el máximo de la pantalla-->
+                Bèlgica
+            </div>
+            <div class="col border">
+                Canadà
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                Dinamarca
+            </div>
+            <div class="col-7 border"> <!--Ocupa 7 columnas en este, a diferencia de las otras dos columnas-->
+                Estats Units
+            </div>
+            <div class="col border">
+                França
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                Georgia
+            </div>
+            <div class="col-5 border">
+                Holanda
+            </div>
+            <div class="col-5 border">
+                Islàndia
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5 border border-warning"> <!--Las columnas que no quepan se irán hacia abajo, ya que al superar el tamaño de la pantalla bajarán-->
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3 border"> 
+                Alvocat
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 border">
+                Banana
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 border">
+                Cirera
+            </div>
+            <div class="col-md-6 col-lg-12 col-xl-3 border">
+                Dàtil
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Resultat per pantalla: Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/grid.png)
+
+
+4. BARRES DE NAVEGACIÓ:
+
+Per crear barres de navegació amb Bootstrap hem de posar els següents atributs a la nostra etiqueta "<body>"
+
+```
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+```
+D'aquesta manera estem començant a configurar la nostra barra de navegació, però encara hem d'indicar com volem que s'expandeixi o es colapsi. Per això, hem de posar la següent etiqueta:
+
+```
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+```
+Per centrar el text de la nostra secció de navegació, l'hem de posar a dins d'un contenidor, i a partir d'allà podem posar els botons i items com vulguem. Per fer-ho, no ens podem oblidar de posar etiquetes nav-item on a dins podem posar etiquetes nav que s'ajustin al que necessitem (com per exemple, nav-link, que ens posaria un link href a la direcció web que vulguem).
+
+A continuació es mostra un codi d'exemple que mostra aquesta funcionalitat: 
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <!-- Meta tags necessaris -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS del framework bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-padding-top: 70px;
+    }
+  </style>
+  <title>Exemple</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!--ES preferible poner un nav para empezar la navegación, pero se podría poner un div-->
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+    <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+      <a class="navbar-brand" href="#">Components Arduino</a> <!--Navbar-brand es para que resalte -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav"> <!--Con ul podemos poner los ítems de la barra de navegación.-->
+          <li class="nav-item">
+            <a class="nav-link" href="#item-1">Item 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#item-2">Item 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#item-3">Item 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-5 bg-warning text-bg-warning">
+    <h1>Hola?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum atque laborum pariatur rem tempore dolorum
+      veritatis quibusdam voluptas deserunt, nulla ratione inventore voluptate est earum facere! Tenetur
+      perspiciatis rem eligendi.</p>
+  </div>
+  
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-1">Item 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-2">Item 2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <div class="container mt-3 p-4 border rounded">
+    <h1 id="item-3">Item 3</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo ab provident quos modi vero expedita
+      quidem error nihil ipsum possimus iure odio, cumque laudantium quo, ullam ipsa dicta quis?</p>
+  </div>
+
+  <!-- JavaScript del framework bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/navegacio.png)
+
+
+
+5. TAULES
+
+Per últim en aquesta part de documentació essencial de Bootstrap, veurem la creació de taules. És una mica semblant al grid, i per a diferenciar-ho podem pensar en això com una funcionalitat no tan flexible com un grid, que ens servirà per donar una disposició uniforme a les nostres dades. Podem imaginar que utilitzem aquest mètode per mostrar les dades d'una base de dades, mentre que utilitzariem grid per dividir les dades en el tamany i disposició que vulguem per mostrar-les d'una manera més creativa. 
+
+La manera de crear-les també és similar al grid, ja que cada text va dins d'un div de columna on especifiquem, gràcies a un atribut "class" les seves característiques úniques. Aquest div de columna hi és dins d'un div de fila (row) i aquest es troba a dins d'un container. 
+
+Un exemple de codi que mostra com crear una taula senzilla podría ser el següent: 
+
+```
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <!-- Meta tags necessaris -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS del framework bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-padding-top: 70px;
+    }
+  </style>
+  <title>Exemple</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+ <!-- JavaScript del framework bootstrap -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+ crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/tablas.png)
+
+
+
+Ara que ja hem vist les funcionalitats principals de Bootstrap, podem continuar amb el nostre projecte.
+
+
 
 
 
