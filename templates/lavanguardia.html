@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
-    <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title }}">
-    <p><a href="{{ rss.feed.image.link }}">{{ rss.feed.image.link }}</a></p>
-    {% for item in rss.entries %}  <!--rss.entries es una lista de páginas que tenemos en la sección de notícias. Aquí se establece que se ha de hacer un recorrido por todas las notícias, y por cada una su información independiente.-->
-        <p>
-            <a href="{{item.link}}">{{item.title}}</a>
-            {% for media in item.media_content %}
-                <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
-            {% endfor %}
-        </p>
-    
-
-    <p>Descripción de la notícia - {{item.description}}</p>  <!--Finalmente, mostramos por pantalla la descripción de la notícia, fecha de publicación, modificación, autor, categoría de las notícia-->
-    <p>Fecha de publicación - {{item.published}}</p>
-    <p>Fecha de modificación - {{item.updated}}</p>
-    <p>Autor - {{item.author}}</p>
-    <p>Categoría de la notícia- {{item.category}}</p>
-    {% endfor %}
+    <div class="container text-center mt-5 border border-danger">
+        <div class="row">
+            <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+            <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title }}">
+            <p><a href="{{ rss.feed.image.link }}">{{ rss.feed.image.link }}</a></p>
+            <div class="col"> 
+                {% for item in rss.entries %} 
+                <div class="col-5"> <!--rss.entries es una lista de páginas que tenemos en la sección de notícias. Aquí se establece que se ha de hacer un recorrido por todas las notícias, y por cada una su información independiente.-->
+                    <p>
+                        <a href="{{item.link}}">{{item.title}}</a>
+                        {% for media in item.media_content %}
+                            <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
+                </div>
+                        {% endfor %}
+                    </p>
+                
+            
+                <p>Descripción de la notícia - {{item.description}}</p>  <!--Finalmente, mostramos por pantalla la descripción de la notícia, fecha de publicación, modificación, autor, categoría de las notícia-->
+                <p>Fecha de publicación - {{item.published}}</p>
+                <p>Fecha de modificación - {{item.updated}}</p>
+                <p>Autor - {{item.author}}</p>
+                <p>Categoría de la notícia- {{item.category}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </body>
-</html>
+</html>  
