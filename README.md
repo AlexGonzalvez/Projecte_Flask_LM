@@ -1166,3 +1166,117 @@ Encara i així deixo el codi final de com queda aquesta pàgina principal amb el
 
 ```
 Ja només ens queda veure com quedarà finalment la nostra pàgina que mostra seccions de notícies. La perfeccionarem amb Bootstrap i li incorporarem l'estil que es troba a la pàgina principal per a que tot tingui sentit i sigui uniforme. 
+
+3. **EDICIÓ DE LA SECCIÓ DE NOTÍCIES**
+
+El major repte aquí es troba en aplicar un estil *grid* que ens permeti distribuir tota aquesta informació en quatre columnes inicials que es mostraràn quan la pantalla sigui molt gran, i que, segons baixi el tamany de la pantalla, menys columnes haurem de mostrar, fins que només en quedi una, pròpia d'un dispositiu mòvil.
+
+Per a fer això, crearem un contenidor anomenat *rss_container* on aplicarem un estil que crearà aquest format que estem buscant. Simplement mostrarà les columnes amb grid i aplicarà el format que volem per a cada notícia que es trobi. En concret hauriem de tenir aquest contenidor configurat en estil CSS de la següent manera: 
+
+```
+.rss_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+```
+Al codi que ja teniem de base, el que farem serà posar dins d'un contenidor comú i corrent el títol de la secció de notícies general, amb el link i la imatge corresponent. Després d'això haurem de posar abans del nostre *for* (que recordem que la seva funció és obtenir totes les notícies (dades com descripció, o imatge) de cada secció) el nostre *rss_container* per a que apliqui aquesta distribució de files i columnes per cada notícia. Per últim haurem de posar una última etiqueta *div* que es troba just després del començament del *for*. Aquesta última etiqueta és super important, ja que si no, no funcionarà res i sortirà tot molt desordenat sense saber per què (m'ha passat una bona estona). 
+
+Una vegada hem acabat amb tot això li donem un estil amb etiquetes CSS de la pàgina principal i introduïm la barra de navegació. Amb això ja tindriem aquesta pàgina configurada. 
+
+Per si es necessita el codi principal i final d'aquesta pàgina de seccions, es mostra a continuació: 
+
+```
+<!DOCTYPE html>  <!--Feedparser utiliza el rss que hemos creado en app.py y, poniendole una serie de atributos que corresponden a las etiquetas de nuestro xml, podemos obtener los datos de manera sencilla-->
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Vanguardia - {{rss.feed.title}}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+
+        .rss_container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        .logo_vanguardia{
+            width:15%;
+            margin-left:130%;
+        }
+    </style>
+</head>
+
+<body class="bg-primary-subtle  text-black data-bs-spy scroll" data-bs-target=".navbar" data-bs-offset="100">
+   
+
+        <!--ES preferible poner un nav para empezar la navegación, pero se podría poner un div-->
+
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+        <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+          <a class="navbar-brand" href="/">Periódicos de La Vanguardia</a> <!--Navbar-brand es para que resalte -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav"> <!--Con ul podemos poner los ítems de la barra de navegación.-->
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/deportes">Deportes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/politica">Política</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/vida">Vida</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/opinion">Opinión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/internacional">Internacional</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.lavanguardia.com/"><img class="logo_vanguardia" src="/static/img/logo_vanguardia.jpeg"/></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+
+        <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+        <div class="text-center">
+            <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title }}">
+            <p><a href="{{ rss.feed.image.link }}">{{ rss.feed.image.link }}</a></p>
+        </div>
+    </div>
+       
+    <div class="rss_container">
+
+        {% for item in rss.entries %} <!--rss.entries es una lista de páginas que tenemos en la sección de notícias. Aquí se establece que se ha de hacer un recorrido por todas las notícias, y por cada una su información independiente.-->
+            <div>
+                <a href="{{item.link}}">{{item.title}}</a>
+                {% for media in item.media_content %}
+                    <img src="{{media.url}}" alt="{{item.title}}" />
+                {% endfor %}
+
+                <p>Descripción de la notícia - {{item.description}}</p>  <!--Finalmente, mostramos por pantalla la descripción de la notícia, fecha de publicación, modificación, autor, categoría de las notícia-->
+                <p>Fecha de publicación - {{item.published}}</p>
+                <p>Fecha de modificación - {{item.updated}}</p>
+                <p>Autor - {{item.author}}</p>
+                <p>Categoría de la notícia- {{item.category}}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>  
+
+```
+
+I amb això ja hem acabat el nostre projecte amb Bootsrap i RSS! Ha sigut molt entretingut i bastant feina però ja tenim la nostra pàgina super configurada i preparada per entregar. Com a extra, ficarè el codi en una etiqueta nova i el compartiré amb el professorat. 
