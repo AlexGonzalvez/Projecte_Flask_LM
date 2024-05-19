@@ -726,5 +726,68 @@ Podem verificar que la nostra barra de navegació l'hem creat correctament si el
 ```
 Com es pot comprobar a l'anterior codi, tot aquest menú de navegació hi és dins d'una etiqueta *body* que conté els atributs necessaris per a que *navbar* es mostri correctament, a més d'un afegit: el color de fons de la nostra web! Ara ja tenim un color escollit, que en el meu cas es un blau més fluix. Poc a poc, anem personalitzant la web a la nostra manera. 
 
+La nostra barra de navegació ha quedat de la següent manera: 
 
+Resultat per pantalla: ![Imatge del resultat]()
+
+
+2. **CREANT EL NOSTRE CARRUSEL**
+
+Per a crear un carrúsel hem de posar les nostres classes i dades dins d'un contenidor, tot seguit d'una sèrie d'etiquetes *</div*. Primer posem un div on identifiquem l'ID del nostre carrusel, i seguidament incorporem un div que s'anomena *carousel-inner* que ens indicarà la unitat del nostre carrúsel, és a dir, a partir d'aquí comencem a incorporar elements que formaràn el nostre propi carrusel. 
+
+Aquests elements són els anomenats *carousel-item* i són això, les imatges (items) que formen el nostre carrusel. Per a incorporar-lo només hem de continuar afegint etiquetes div, primer una que és *carousel-active* que indica quina és la imatge que es mostra primer a l'usuari, de totes les que hi ha al carrusel. Llavors, dins s'aquest *carousel-active* posem una etiqueta *img* i una descripció d'aquesta imatge amb una etiqueta *p*. Les altres etiquetes div a partir d'aqui només necessitaràn anomenar-se *carousel-item* no *carousel-active*, ja que hem especificat ja quina serà la imatge activa per defecte. 
+
+Abans de tancar el nostre *carousel-inner* hem de posar un parell d'etiquetes més, que són les anomenades *button*. No son més que els botons dret i esquerre que permeten que l'usuari passi d'una imatge a una altra. Una vegada hem posar aquests dos botons, podem tancar finalment aquesta etiqueta. 
+
+**IMPORTANT**: És molt important que tinguem al nostre HTML l'script framework de Bootstrap, que ens permetrà executar aquestes funcions. Sense això no funcionarà mai. Sembla una tonteria, (i ho és), però m'he passat unes quantes hores intentant entendre perquè no funcionava el carrusel, per després veure que era només això. El que hem de posar en **tots** els HTML en els que fem servir funcionalitats pròpies de Bootstrap és el següent: 
+
+```
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+```
+
+El nostre carrusel ja hauria d'estar completament configurat i preparat per funcionar. Podem comprobar si el que hem fet podria funcionar o no si s'ajusta més o menys al següent codi, que és la creació del carrusel: 
+
+```
+ <div class="container-fluid">
+        <div id="carouselPortada" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/static/img/deportes.jpeg" class="d-block w-100" alt="Imagen de la sección de Deportes">
+              <p class="texto_img">Carlos Sainz: "Estoy seguro de que mañana podré subirme al coche y hacerlo bien"</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/internacional.jpeg" class="d-block w-100" alt="Imagen de la sección Internacional">
+              <p class="texto_img">El plan de atacar Rafah de Netanyahu obstaculiza un acuerdo con Hamas</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/opinion.jpeg" class="d-block w-100" alt="Imagen de la sección de Opinión">
+              <p class="texto_img">Pese a la inflamada retórica de nuestros políticos, no percibo un ambiente guerracivilista</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/politica.jpeg" class="d-block w-100" alt="Imagen de la sección de Política">
+              <p class="texto_img">El PSC ganaría las elecciones mientras ERC y Junts se disputarían la segunda plaza, según el sondeo de la Generalitat</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/vida.jpeg" class="d-block w-100" alt="Imagen de la sección de Vida">
+              <p class="texto_img">'Rise of the Ronin': "Queremos que los jugadores disfruten de ser un samurái"</p>
+            </div>
+
+          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortada" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPortada" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+```
+Una demostració estàtica de com s'hauria de veure un carrusel funcional podria ser aquesta imatge: 
+
+Resultat per pantalla: ![Imatge del resultat]()
 
