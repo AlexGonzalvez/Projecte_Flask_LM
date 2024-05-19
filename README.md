@@ -791,3 +791,378 @@ Una demostració estàtica de com s'hauria de veure un carrusel funcional podria
 
 Resultat per pantalla: ![Imatge del resultat]()
 
+A partir d'aquí, a la pàgina principal he continuat utilitzant el mateix mètode de creació de carrusels, per crear diversos que puguessin mostrar cada secció. Com em sembla massa repetitiu mostrar un procés igual tota l'estona, em limitaré a indicar que l'únic que es fa a partir d'aquí es posar l'estil a la pàgina web a través de titols que contenen estils CSS, i una barra de navegació a sota que mostra el meu nom amb un enllaç al meu Github al pulsar-ho. 
+
+Encara i així deixo el codi final de com queda aquesta pàgina principal amb el seu estil propi, per si és d'interés (encara que sempre es pot veure com queda a la versió final entregada a través del Moodle): 
+
+```
+<!DOCTYPE html>
+<html lang="ca" >
+  
+  <head>
+      <!-- Meta tags necessaris -->
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- CSS del framework bootstrap -->
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      
+      <style>
+
+        .titulo{
+          font-size: 20%;
+          position:relative;
+          margin-left: 30%;
+          margin-top:5%;
+          font-size:250%;
+          margin-bottom: 5%;
+          font-family: "Times New Roman", Times, serif;
+        }
+        .titulo_2{
+          font-size: 20%;
+          position:relative;
+          margin-left: 12%;
+          margin-top:10%;
+          font-size:250%;
+          margin-bottom: 5%;
+          font-family: "Times New Roman", Times, serif;
+        }
+        .titol_destacats{
+          margin-top:5%;
+          margin-bottom:10%;
+          margin-left:10%;
+          font-size:180%;
+          font-family: "Times New Roman", Times, serif;
+          font-weight:bold;
+        }
+
+        .titol_seccion{
+          margin-top:5%;
+          margin-bottom:10%;
+          margin-left:25%;
+          font-size:180%;
+          font-family: "Times New Roman", Times, serif;
+          font-weight:bold;
+        }
+
+
+
+        .img_vida{
+          margin-right:0%;
+          margin-top:0%;
+          width:60%;
+
+        }
+
+        .titol_vida{
+          margin-top:5%;
+          margin-bottom:3%;
+          margin-left:0%;
+          font-size:180%;
+          font-family: "Times New Roman", Times, serif;
+          font-weight:bold;
+        }
+
+        .texto_img{
+          margin-top:3%;
+          font-size:130%;
+          font-family: "Times New Roman", Times, serif;
+          text-align:center;
+        }
+
+        footer{
+          position: absolute;
+          bottom: -410%; 
+        }
+
+        .logo_vanguardia{
+          width:15%;
+          margin-left:130%;
+        }
+
+
+          
+      </style>
+        <title>PERIÓDICOS DE LA VANGUARDIA</title>
+    </head>
+    <body class="bg-primary-subtle text-black data-bs-spy scroll" data-bs-target=".navbar" data-bs-offset="100">
+
+        <!--ES preferible poner un nav para empezar la navegación, pero se podría poner un div-->
+
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+        <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+          <a class="navbar-brand" href="#">Periódicos de La Vanguardia</a> <!--Navbar-brand es para que resalte -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav"> <!--Con ul podemos poner los ítems de la barra de navegación.-->
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/deportes">Deportes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/politica">Política</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/vida">Vida</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/opinion">Opinión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/internacional">Internacional</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.lavanguardia.com/"><img class="logo_vanguardia" src="/static/img/logo_vanguardia.jpeg"/></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="titulo">PERIÓDICOS DE LA VANGUARDIA</h1>
+
+    <div class="container-fluid">
+        <div id="carouselPortada" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/static/img/deportes.jpeg" class="d-block w-100" alt="Imagen de la sección de Deportes">
+              <p class="texto_img">Carlos Sainz: "Estoy seguro de que mañana podré subirme al coche y hacerlo bien"</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/internacional.jpeg" class="d-block w-100" alt="Imagen de la sección Internacional">
+              <p class="texto_img">El plan de atacar Rafah de Netanyahu obstaculiza un acuerdo con Hamas</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/opinion.jpeg" class="d-block w-100" alt="Imagen de la sección de Opinión">
+              <p class="texto_img">Pese a la inflamada retórica de nuestros políticos, no percibo un ambiente guerracivilista</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/politica.jpeg" class="d-block w-100" alt="Imagen de la sección de Política">
+              <p class="texto_img">El PSC ganaría las elecciones mientras ERC y Junts se disputarían la segunda plaza, según el sondeo de la Generalitat</p>
+            </div>
+            <div class="carousel-item">
+              <img src="/static/img/vida.jpeg" class="d-block w-100" alt="Imagen de la sección de Vida">
+              <p class="texto_img">'Rise of the Ronin': "Queremos que los jugadores disfruten de ser un samurái"</p>
+            </div>
+
+          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortada" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPortada" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <h1 class="titulo_2">BIENVENIDO A LA PÁGINA WEB DE LA VANGUARDIA</h1>
+      <h1 class="titol_destacats">A CONTINUACIÓN PUEDE ECHAR UN BREVE VISTADO A NUESTRAS SECCIONES PRINCIPALES</h1> 
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <h1 class="titol_seccion">SECCIÓN DE DEPORTES</h1>
+          <div id="carouselDeportes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/img/deportes_1.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">La UCO investiga al expresidente de la RFEF por corrupción</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/deportes_2.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Los diez futbolistas mejor pagados pertenecen al Paris Saint-Germain</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/deportes_3.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Luis Rubiales volverá a España el próximo 6 de abril, según la agencia EFE</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/deportes_4.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Durant, octavo máximo anotador de la NBA y Draymond Green se encara con Santi Aldama</p>
+              </div>
+            </div> 
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDeportes" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDeportes" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+      
+          </div> 
+        </div>
+        <div class="col-md">
+          <h1 class="titol_seccion">SECCIÓN INTERNACIONAL</h1>
+          <div id="carouselInternacional" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/img/internacional_1.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Una nueva investigación rastrea el origen de importaciones cruciales</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/internacional_2.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">La policía desmantela el campamento de la UCLA y arresta a unas 200 personas</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/internacional_3.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Biden condena la “violencia” en las protestas y dice que no van a cambiar su apoyo a Israel</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/internacional_4.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">El hombre que mató a un niño con una espada en Londres tiene nacionalidad española y brasileña
+                </p>
+              </div>
+            </div> 
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselInternacional" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselInternacional" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+      
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <h1 class="titol_seccion">SECCIÓN DE OPINIÓN</h1>
+          <div id="carouselOpinion" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/img/opinion1.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Los ensayos de Esquirol invitan a un horizonte de vida madura, fecunda y espiritual</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/opinion2.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Tanto en común con Daniel Levinas y tantos proyectos por delante. ¡Qué gran pérdida!</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/opinion3.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Ambiente de Feria en el Parc del Fòrum</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/opinion4.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Taurófilos como yo</p>
+              </div>
+            </div> 
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselOpinion" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselOpinion" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <h1 class="titol_seccion">SECCIÓN DE POLÍTICA</h1>
+          <div id="carouselPolitica" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/img/politica_1.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Sánchez resta trascendencia a una candidatura de Puigdemont: “Ya se presentó en 2017 y 2021”
+                </p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/politica_2.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">Carlos Mazón subraya la "estabilidad" con Vox ante la "debilidad" de Pedro Sánchez
+                </p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/politica_3.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">El trumpismo castizo pide calma</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/politica_4.jpeg" class="d-block w-100" alt="Imagen de noticia">
+                <p class="texto_img">El Consell avanza que la auditoría al sector público instrumental deja datos "preocupantes"</p>
+              </div>
+            </div> 
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPolitica" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPolitica" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+      
+        </div>
+      </div>
+    
+    </div>
+    
+    <div class="container justify-content-center align-items-center m-3">
+      <div class="row">
+
+        <div class="col text-center">
+          <h1 class="titol_vida">SECCION DE VIDA</h1>
+          <div id="carouselVida" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/img/vida_1.jpeg" class="img_vida" alt="Imagen de noticia">
+                <p class="texto_img">EE.UU. saca una regulación contra las emisiones para que la mayoría de los coches sean eléctricos</p>
+                
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/vida_2.jpeg" class="img_vida" alt="Imagen de noticia">
+                <p class="texto_img">La prevención, clave para combatir la insuficiencia cardiaca</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/vida_3.jpeg" class="img_vida" alt="Imagen de noticia">
+                <p class="texto_img">Más sequías, más largas y más intensas, resultado de la acción humana</p>
+              </div>
+              <div class="carousel-item">
+                <img src="/static/img/vida_4.jpeg" class="img_vida" alt="Imagen de noticia">
+                <p class="texto_img">Iberdrola ha plantado más de tres millones de árboles y llegará a cinco a finales de año</p>
+              </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselVida" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselVida" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            
+        </div>
+      </div>
+    
+    <div>
+      <!-- JavaScript del framework bootstrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    </div>
+    
+  </body>
+
+  <footer>
+
+    <navbar>
+      <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+        <a class="navbar-brand navbar navbar-expand-sm bg-primary navbar-dark navbar-toggler" href="https://github.com/AlexGonzalvez/Projecte_Flask_LM">Proyecto realizado por Álex Gonzalvez Cuadrado</a> <!--Navbar-brand es para que resalte -->
+      </div>
+    </navbar>
+  </footer>
+
+</html>
+
+```
+Ja només ens queda veure com quedarà finalment la nostra pàgina que mostra seccions de notícies. La perfeccionarem amb Bootstrap i li incorporarem l'estil que es troba a la pàgina principal per a que tot tingui sentit i sigui uniforme. 
