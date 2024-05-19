@@ -728,7 +728,7 @@ Com es pot comprobar a l'anterior codi, tot aquest menú de navegació hi és di
 
 La nostra barra de navegació ha quedat de la següent manera: 
 
-Resultat per pantalla: ![Imatge del resultat]()
+Resultat per pantalla: ![Imatge del resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/Barra_navegacion.png)
 
 
 2. **CREANT EL NOSTRE CARRUSEL**
@@ -789,7 +789,7 @@ El nostre carrusel ja hauria d'estar completament configurat i preparat per func
 ```
 Una demostració estàtica de com s'hauria de veure un carrusel funcional podria ser aquesta imatge: 
 
-Resultat per pantalla: ![Imatge del resultat]()
+Resultat per pantalla: ![Imatge del resultat](https://github.com/AlexGonzalvez/Projecte_Flask_LM/blob/master/Carrusel_funcional.png)
 
 A partir d'aquí, a la pàgina principal he continuat utilitzant el mateix mètode de creació de carrusels, per crear diversos que puguessin mostrar cada secció. Com em sembla massa repetitiu mostrar un procés igual tota l'estona, em limitaré a indicar que l'únic que es fa a partir d'aquí es posar l'estil a la pàgina web a través de titols que contenen estils CSS, i una barra de navegació a sota que mostra el meu nom amb un enllaç al meu Github al pulsar-ho. 
 
