@@ -666,6 +666,65 @@ Resultat per pantalla: ![Imatge resultat](https://github.com/AlexGonzalvez/Proje
 Ara que ja hem vist les funcionalitats principals de Bootstrap, podem continuar amb el nostre projecte.
 
 
+**PART FINAL DEL PROJECTE: DECORACIÓ AMB BOOTSTRAP**
+
+Hem aprés com funciona Bootstrap a través de les petites pràctiques, així que només ens queda acabar d'ajustar la nostra web per a que sigui visual, original i fàcil de llegir. 
+
+El primer que modificarem serà el menú principal *index.html*. Li afegirem colors, posarem les seccions ordenades i farem diversos carrusels: un mostrarà les notícies de manera general, i per a que no quedi tan pobre aquesta pàgina principal, s'afegiràn uns quants més que mostraràn les portades de notícies principals de cada secció per separat. Anem per parts:
+
+1. **INCORPOREM UN MENÚ DE NAVEGACIÓ**
+
+Per realitzar aquest pas haurem de fer ús de l'eina que proporciona Bootstrap *navbar*, que l'afegirem a la part de damunt del tot de la nostra pàgina per a que l'usuari pugui escollir directament a quina secció de notícies li agradaria anar. També s'afegeix la opció de tornar al menú principal (aquest) a través de l'enllaç *home* (per si es troba en una altra pàgina diferent de la principal), i posarem el logo oficial de *La Vanguardia*, amb l'opció de visitar la seva pàgina oficial directament. 
+
+En concret, la línea de codi que es posa per establir un disseny general d'aquest menú és la següent: 
+
+```
+navbar navbar-expand-sm bg-primary navbar-dark
+```
+Per una banda, *navbar-expand* ens indica fins a quant volem que s'expandeixi la nostra barra de navegació, *bg-primary* indica el color que utilitzem per aquesta (en el meu cas, el blau), i *navbar-dark* posa les lletres de color blanc per a poder-les llegir correctament.
+
+A partir d'ara, els elements de la barra de navegació van dins d'un *container-fluid* per a que es puguin ajustar correctament. Dins del contenidor hi ha les etiquetes *navbar-brand* que ens aportarà unes lletres que ressaltin més, i després es posa un altre div que engloba una llista no ordenada d'elements *navbar-item* que són cadascún dels items de la nostra barra de navegació. També tenen incorporat una etiqueta *nabvar-link* que ens serà molt útil i necessari per a portar a l'usuari fins a la pàgina que desitgi només apretant aquest enllaç. 
+
+Podem verificar que la nostra barra de navegació l'hem creat correctament si el nostre codi s'assembla al següent: 
+
+```
+<body class="bg-primary-subtle text-black data-bs-spy scroll" data-bs-target=".navbar" data-bs-offset="100">
+
+        <!--ES preferible poner un nav para empezar la navegación, pero se podría poner un div-->
+
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark "> <!--Le ponemos a nav una clase de bootrsap (navbar). Con expand indica cuando se expande o cuando se colapsa. Navbar light es para fondos claros, y navbar dark para los oscuros. -->
+        <div class="container-fluid"> <!--Para centrar el texto tenemos que ponerlo en el contenedor.-->
+          <a class="navbar-brand" href="#">Periódicos de La Vanguardia</a> <!--Navbar-brand es para que resalte -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav"> <!--Con ul podemos poner los ítems de la barra de navegación.-->
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/deportes">Deportes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/politica">Política</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/vida">Vida</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/opinion">Opinión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lavanguardia/internacional">Internacional</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.lavanguardia.com/"><img class="logo_vanguardia" src="/static/img/logo_vanguardia.jpeg"/></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+```
+Com es pot comprobar a l'anterior codi, tot aquest menú de navegació hi és dins d'una etiqueta *body* que conté els atributs necessaris per a que *navbar* es mostri correctament, a més d'un afegit: el color de fons de la nostra web! Ara ja tenim un color escollit, que en el meu cas es un blau més fluix. Poc a poc, anem personalitzant la web a la nostra manera. 
 
 
 
